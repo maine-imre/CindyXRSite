@@ -2,6 +2,14 @@
 <html>
 
   {% include head.html %}
+  <script id="init" type="text/x-cindyscript">
+        use("Cindy3D");
+        use("CindyXR");
+        initxrcindy3d(referencemode->"local");
+
+        <script type="text/javascript">
+        CindyJS({canvasname:"CSCanvas",scripts:"@{{ content }}"});
+  </script>
 
   <body>
 
@@ -11,7 +19,8 @@
 
     <div class="post container max-width-2 px2">
     	<h1>{{ page.title }}</h1>
-        {{ content }}
+        <canvas id="Cindy3D" style="border: none;" width="632" height="452"></canvas>
+        <div id="CSCanvas" style="width:50px; height:50px; border:none"></div>
         <p class="meta bg-darken-1 p2 mb4">Posted by <a href="https://github.com/{{ page.author }}">@{{ page.author }}</a> on {{ page.date | date: "%b %e, %Y"}}</p>
     </div>
 
